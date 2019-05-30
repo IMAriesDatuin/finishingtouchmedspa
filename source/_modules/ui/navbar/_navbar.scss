@@ -28,13 +28,13 @@ $navbar-options: (
 	text-color: $secondary,
 	text-hover-color: $primary,
 	text-alt-color: $secondary,
-	menu-alignment: left, // Align menu items: left or right. *Note: This option does not apply if reverse is set to true.
+	menu-alignment: left, // Align menu items: left or right.
 	menu-spacing: 0, // Set the spacing between links.
-	persistent-navbar: false, // Allows the navbar to stick to the top.
+	persistent-navbar: true, // Allows the navbar to stick to the top.
 	persistent-toggle: true, // Hide links and only show the toggle menu.
 	reverse: false, // If set to false navbar will display logo on left and links/icon toggle menu on the right. If set to true the order will be reversed.
 	show-on-page-end: true, // Show the navbar when the scroll position is at the bottom.
-	show-on-scrolling-up: true, // Show the navbar while scrolling up. *Note: persistent-navbar will be disabled and scrolling down will hide the navbar.
+	show-on-scrolling-up: false, // Show the navbar while scrolling up. *Note: persistent-navbar will be disabled and scrolling down will hide the navbar.
 	break: 1366px, // Defines when the toggle menu is activated.
 	//width: map-get($section, width),
 	width: 2560px,

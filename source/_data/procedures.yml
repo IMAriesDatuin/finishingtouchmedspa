@@ -5,8 +5,8 @@ content:
   id: 'procedure-coolsculpting'
   title: 'CoolSculpting'
   description: 'with Wave'
-  image-src: '../assets/placeholder/shutterstock_380423032.jpg'
-  webp: '../assets/placeholders/shutterstock_380423032.webp'
+  image-src: 'assets/placeholder/shutterstock_380423032.jpg'
+  webp: 'assets/placeholders/shutterstock_380423032.webp'
   link: 'procedures/template#get-started'
 
 
@@ -14,8 +14,8 @@ content:
   id: 'procedure-microneedling'
   title: 'Microneedling'
   description: 'with PRP'
-  image-src: '../assets/placeholder/shutterstock_1028011084.jpg'
-  webp: '../assets/placeholder/shutterstock_380423032.webp'
+  image-src: 'assets/placeholder/shutterstock_1028011084.jpg'
+  webp: 'assets/placeholder/shutterstock_380423032.webp'
   link: 'procedures/template#get-started'
 
 
@@ -23,8 +23,8 @@ content:
   id: 'procedure-sciton-skin'
   title: 'Sciton Skin'
   description: 'Rejuvenation'
-  image-src: '../assets/placeholder/shutterstock_394494271.jpg'
-  webp: '../assets/placeholder/shutterstock_394494271.webp'
+  image-src: 'assets/placeholder/shutterstock_394494271.jpg'
+  webp: 'assets/placeholder/shutterstock_394494271.webp'
   link: 'procedures/template#get-started'
 
 
@@ -32,8 +32,8 @@ content:
   id: 'procedure-fillers-and-neurotoxins'
   title: 'Fillers & Neurotoxins'
   description: ''
-  image-src: '../assets/placeholder/shutterstock_1242539569.jpg'
-  webp: '../assets/placeholder/shutterstock_1242539569.webp'
+  image-src: 'assets/placeholder/shutterstock_1242539569.jpg'
+  webp: 'assets/placeholder/shutterstock_1242539569.webp'
   link: 'procedures/template#get-started'
 
 
@@ -41,6 +41,6 @@ content:
   id: 'procedure-hydrafacial-peel'
   title: 'Hydrafacial Peel'
   description: ''
-  image-src: '../assets/placeholder/shutterstock_1337024621.jpg'
-  webp: '../assets/placeholder/shutterstock_1337024621.webp'
+  image-src: 'assets/placeholder/shutterstock_1337024621.jpg'
+  webp: 'assets/placeholder/shutterstock_1337024621.webp'
   link: 'procedures/template#get-started'

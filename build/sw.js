@@ -24,7 +24,7 @@ workbox.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "about.html",
-    "revision": "4c7b8b4423b30b2276e27eb394b1481d"
+    "revision": "c8c96613fb259e966356db0d401cb33e"
   },
   {
     "url": "android-chrome-192x192.png",
@@ -332,15 +332,15 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/index.html",
-    "revision": "2c1d150d0cf1c41e1184285a37c7babb"
+    "revision": "5b3f25385a38b57b52451d7b9ead66f6"
   },
   {
     "url": "blog/template.html",
-    "revision": "f8505ddef57a13aaf892dd056f85837b"
+    "revision": "5ae8a5fee45a659749e1aec8d70dd43d"
   },
   {
     "url": "contact.html",
-    "revision": "c96c993357de434ea3a8fe35dece8860"
+    "revision": "4e5e9f8565aa1725f4c23bb614cb921b"
   },
   {
     "url": "favicon-16x16.png",
@@ -360,11 +360,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "29e2e3dc4dbd5b87136536a8d83a1a0e"
+    "revision": "2b8239f22aa7fd4cbf6e41b278522701"
   },
   {
     "url": "legal.html",
-    "revision": "9b26d0c0240f074e829b1d5880632496"
+    "revision": "bf19c400b8763ff4605ab80ee844bf8e"
   },
   {
     "url": "mstile-144x144.png",
@@ -407,20 +407,16 @@ self.__precacheManifest = [
     "revision": "cfd2538b17bd5f69a5c7f2438b89f428"
   },
   {
-    "url": "procedures.html",
-    "revision": "e73e7489a9d4f293bf506b3a311f2548"
-  },
-  {
     "url": "procedures/index.html",
-    "revision": "9a1a46cf2eb53fc378c53f4ac8e182ed"
+    "revision": "80f6efadbad43b023e840efc72361a3d"
   },
   {
     "url": "procedures/template.html",
-    "revision": "ed0611de9b27dd227d00a60b0d40cd64"
+    "revision": "e270862bf33ed50c06b5d86de20f8cbe"
   },
   {
     "url": "reviews.html",
-    "revision": "ed0a85ab4eecab034e18f3af9be96cd4"
+    "revision": "5302f9b48c3eedba46dbf0cfd69eac5d"
   },
   {
     "url": "safari-pinned-tab.png",
@@ -431,20 +427,16 @@ self.__precacheManifest = [
     "revision": "952fabb80a08221e3f32fb86642cf30d"
   },
   {
-    "url": "scripts/app.4cb4ebd3f8.js",
-    "revision": "7a35e7a0b8230fa4c60d8223136359ed"
+    "url": "scripts/app.3704b5ed3d.css",
+    "revision": "43f789170f2b61dec560a97d28d3719e"
   },
   {
-    "url": "scripts/app.eacf87515f.css",
-    "revision": "f36a842615bf210049d7508fc715e2f9"
+    "url": "scripts/app.4d55b82f25.js",
+    "revision": "3672d9b9480f1d9959d3c53cd12c4dd2"
   },
   {
     "url": "webfonts/fa-brands-400.eot",
     "revision": "72721167aea128f7ddac301c15dab835"
-  },
-  {
-    "url": "webfonts/fa-brands-400.png",
-    "revision": "9529390786a6bfeb4ea5197a39d2e410"
   },
   {
     "url": "webfonts/fa-brands-400.svg",

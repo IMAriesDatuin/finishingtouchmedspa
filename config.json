@@ -202,9 +202,9 @@
 
 		"svg": {
 			"convert": {
-						"allow": true,
-						"format": "png",
-						"scale": "2"
+				"allow": true,
+				"format": "png",
+				"scale": "2"
 			},
 			"cleanup": true,
 			"minify": true,
