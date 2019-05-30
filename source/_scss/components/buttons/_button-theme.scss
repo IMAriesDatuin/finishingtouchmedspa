@@ -1,0 +1,271 @@
+/* -------------------------------------------------- */
+/* BUTTON THEME
+/* -------------------------------------------------- */
+
+// OPTIONS
+$button-theme-options: (
+	font: $subheadline,
+	text-color: $primary,
+	text-hover-color: $white,
+	icon-color: $white,
+	icon-hover-color: $white,
+	background-color: $primary,
+	background-hover-color: $secondary,
+	size: 400px,
+	radius: 50px,
+	duration: 250ms,
+	icon-ease: $easeNatural,
+	button-ease: $easeNatural
+);
+
+
+// CUSTOM
+.button-theme {
+
+	@extend .box-shadow-xs;
+	@include transition(
+		$property: (background, filter),
+		$duration: map-get($button-theme-options, duration),
+		$delay: 0,
+		$ease: map-get($button-theme-options, background-ease),
+		$optimize: true
+	);
+	overflow: visible;
+	position: relative;
+	padding: {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	height: map-get($button-theme-options, radius);
+	width: 100%;
+	max-width: map-get($button-theme-options, size);
+	border-radius: map-get($button-theme-options, radius);
+	background: rgba($white, 1);
+	transform: scale3d(1,1,1);
+	transform-origin: center center;
+
+	p {
+
+		overflow: hidden;
+		align-self: center;
+		//padding-right: pxtoem( map-get($button-theme-options, radius) * 1.5 );
+		width: 100%;
+		color: map-get($button-theme-options, text-color);
+		font: map-get($button-theme-options, font);
+		font-size: 1em;
+		line-height: normal;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		//mix-blend-mode: difference;
+
+		@include break($type: 'width', $min: 0, $max: 320px, $orientation: '') {
+			//font-size: 0.6em;
+		}
+
+	}
+
+	span {
+
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: map-get($button-theme-options, radius);
+		height: map-get($button-theme-options, radius);
+		color: map-get($button-theme-options, icon-color);
+
+		&::before {
+
+			@include transition(
+				$property: (opacity, transform),
+				$duration: map-get($button-theme-options, duration) * 0.5,
+				$delay: 0,
+				$ease: map-get($button-theme-options, icon-ease),
+				$optimize: true
+			);
+			align-items: center;
+			transform-origin: center center;
+
+		}
+
+		&.icon-up {
+
+			&::before {
+				opacity: 1;
+				transform: scale3d(1,1,1) rotate(0);
+			}
+
+		}
+
+		&.icon-over {
+
+			&::before {
+				opacity: 0;
+				transform: scale3d(0,0,1) rotate(-180deg);
+			}
+
+		}
+
+	}
+
+	&::after {
+
+		//@extend .background-primary-right;
+		@extend .pseudo;
+		//@extend .box-shadow-xs;
+		@include transition(
+			$property: (width, background, filter),
+			$duration: map-get($button-theme-options, duration),
+			$delay: 0,
+			$ease: map-get($button-theme-options, background-ease),
+			$optimize: true
+		);
+		z-index: 0;
+		top: 0;
+		right: 0;
+		width: map-get($button-theme-options, radius);
+		height: 100%;
+		//border: 2px solid $white;
+		border-radius: map-get($button-theme-options, radius);
+		background: linear-gradient(to right, map-get($button-theme-options, background-hover-color) 25%, darken( map-get($button-theme-options, background-hover-color), $darken) 100%);
+		//background: map-get($button-theme-options, background-color);
+		//transform: scale3d(1,1,1) translate3d(0,0,0);
+		transform-origin: right center;
+
+	}
+
+	&:hover {
+
+		@extend .box-shadow-md;
+		background: rgba($white, 0);
+
+		p {
+			color: map-get($button-theme-options, text-hover-color);
+		}
+
+		span {
+
+			&::before {
+				color: map-get($button-theme-options, icon-hover-color);
+			}
+
+			&.icon-up {
+
+				&::before {
+					opacity: 0;
+					transform: scale3d(0,0,1) rotate(180deg);
+				}
+
+			}
+
+			&.icon-over {
+
+				&::before {
+					opacity: 1;
+					transform: scale3d(1,1,1) rotate(0);
+				}
+
+			}
+
+		}
+
+		&::after {
+			//@extend .box-shadow-md;
+			z-index: -1;
+			width: 100%;
+			//background: map-get($button-theme-options, backgroud-hover-color);
+		}
+
+	}
+
+	&.is-touch {
+
+		//@extend .background-primary-right;
+		//width: 100%;
+		background: linear-gradient(to right, map-get($button-theme-options, background-hover-color) 25%, darken( map-get($button-theme-options, background-hover-color), $darken) 100%);
+
+		&::after {
+			box-shadow: none;
+			background: transparent;
+		}
+	
+		p {
+			color: map-get($button-theme-options, text-hover-color);
+		}
+
+		&.is-active {
+
+			@extend .box-shadow-lg;
+			background: rgba($primary, 1);
+			transform: scale3d(0.95,0.95,1);
+
+			span {
+
+				&::before {
+					color: map-get($button-theme-options, icon-hover-color);
+				}
+
+				&.icon-up {
+
+					&::before {
+						opacity: 0;
+						transform: scale3d(0,0,1) rotate(180deg);
+					}
+
+				}
+
+				&.icon-over {
+
+					&::before {
+						opacity: 1;
+						transform: scale3d(1,1,1) rotate(0);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+	
+	@include break($type: 'width', $min: 0, $max: $tablet) {
+
+		width: 100%;
+		max-width: 100%;
+		color: map-get($button-theme-options, icon-color);
+		background: map-get($button-theme-options, background-color);
+
+		&::after {
+			box-shadow: none;
+		}
+
+	}
+	
+	@include break($type: 'width', $min: 0, $max: 320px, $orientation: 'portrait' ) {
+
+		p {
+			padding-right: pxtoem( map-get($button-theme-options, radius) * 0.5 );
+		}
+
+	}
+
+}
+
+
+// MODIFIERS
+.button-theme {
+
+	&.is-active {
+		max-width: 100%;
+		color: map-get($button-theme-options, icon-color);
+		background: map-get($button-theme-options, background-color);
+	}
+
+}

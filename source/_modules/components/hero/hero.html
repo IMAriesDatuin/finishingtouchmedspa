@@ -1,0 +1,153 @@
+
+<!-- CONTENT: HERO -->
+<section id="hero" class="hero reveal-container no-selection" role="banner">
+
+
+	{{> branch-01}}
+
+
+	<!-- BACKGROUND: IMAGE -->
+	<!--
+	<div class="position-absolute top left width-100 height-full overflow-hidden z-auto">
+		<div class="position-absolute top left width-100 height-full background-cover background-tr background-tc-tablet background-no-repeat lazy"
+			 data-src="{{ root }}{{ images }}{{ page }}/hero@2x.png"
+			 data-srcset="{{ root }}{{ images }}{{ page }}/hero@1x.png 220w,
+						  {{ root }}{{ images }}{{ page }}/hero@2x.png 330w"
+			 data-sizes="220px">
+		</div>
+	</div>
+	-->
+	<!-- // BACKGROUND: IMAGE -->
+
+
+	<!-- BACKGROUND -->
+	<!--<div data-src="{{ root }}{{ assets }}index/hero.jpg" class="position-absolute top left fullscreen background-cover background-tc background-no-repeat lazy z-auto"></div>-->
+	<!-- // BACKGROUND -->
+
+
+	<!-- BLOCK -->
+	<section class="hero-content grid-x align-top align-center medium-up-1 large-up-2">
+
+
+		<!-- CELL -->
+		<div class="cell large-order-1 medium-order-2 small-order-2">
+			
+
+			<div class="hero-copy text-block reveal">
+
+				<!-- COPY -->
+				<h1>What if you could restore the tight, healthy skin of your youth without the help of surgery, drugs, or beauty products?</h1>
+				<p>
+				This may be possible with new techniques that use focused laser technology to stimulate the growth of new skin cells. Sciton laser services for skin tightening is an innovative, non-invasive anti-aging procedure that can help its users look like they did years ago. Learn more during a consultation with our team at the Finishing Touch MedSpa!
+				</p>
+				<!-- // COPY -->
+
+
+				<!-- BUTTON -->
+				<a href="--base/procedures" class="button button-outline">
+					<p>View our services</p>
+					<span class="fal fa-long-arrow-right"></span>
+				</a>
+				<!-- // BUTTON -->
+
+			</div>
+
+
+		</div>
+		<!-- // CELL -->
+
+
+		<!-- CELL -->
+		<div class="cell large-order-2 medium-order-1 small-order-1">
+			
+
+			<div class="hero-media media-container responsive-embed widescreen">
+
+				<video width="100%" height="100%" poster="{{ root }}{{ assets }}placeholder/shutterstock_1025805082.jpg" loop muted playsinline autoplay="true" preload="none" tabindex="0">
+					<source type="video/mp4" src="{{ root }}{{ assets }}placeholder/video.mp4"/>
+					<source type="video/webm" src="{{ root }}{{ assets }}placeholder/video.webm">
+					Sorry, your browser doesn't support embedded videos.
+				</video>
+
+
+				<!--
+				<video class="media-container lazy hide" width="100%" data-src="{{ root }}{{ assets }}placeholder/video.mp4" poster="{{ root }}{{ assets }}placeholder/shutterstock_1025805082.jpg" loop muted playsinline autoplay="true" tabindex="0">
+					<source type="video/mp4" data-src="{{ root }}{{ assets }}placeholder/video.mp4">
+					<source type="video/webm" data-src="{{ root }}{{ assets }}placeholder/video.webm">
+					Sorry, your browser doesn't support embedded videos.
+				</video>
+				-->
+
+			</div>
+
+
+
+			<div class="hero-media lazy-container hide">
+
+				<img class="lazy" data-src="{{ root }}{{ assets }}placeholder/shutterstock_1025805082.jpg" alt="Welcome to Finishing Touch Medspa.">
+
+			</div>
+
+
+		</div>
+		<!-- // CELL -->
+
+
+	</section>
+	<!-- // BLOCK -->
+
+
+
+
+
+	<!-- BLOCK -->
+	<div class="hero-footer grid-x align-middle align-center">
+
+
+		<!-- SCROLL HINT -->
+		<a href="#welcome" class="scroll-to cell" aria-label="Welcome to --name">
+
+			{{> scroll-hint}}
+
+		</a>
+		<!-- // SCROLL HINT -->
+
+
+		<!-- SOCIAL -->
+		<ul class="social">
+
+			{{#each social.content}}
+			<li>
+
+				<a href="{{ link }}" target="_blank" class="social-{{ icon }}-hover" aria-label="{{ description }}" data-no-swup>
+
+					<span class="fab fa-{{ icon }}" aria-hidden="true"></span>
+
+				</a>
+
+			</li>
+			{{/each}}
+
+			<li class="divider"></li>
+
+			<li>
+
+				<a href="#" aria-label="Please call us at +1 702 555 7777." data-no-swup>
+
+					<span class="fas fa-phone fa-flip-horizontal" aria-hidden="true"></span>
+					<p>916 260 2135</p>
+
+				</a>
+
+			</li>
+
+		</ul>
+		<!-- // SOCIAL -->
+
+
+	</div>
+	<!-- // BLOCK -->
+
+
+</section>
+<!-- // CONTENT: HERO -->

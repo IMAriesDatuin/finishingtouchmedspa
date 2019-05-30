@@ -1,0 +1,84 @@
+/* -------------------------------------------------- */
+/* TEXT BLOCK
+/* -------------------------------------------------- */
+
+// OPTIONS
+$text-block-options: (
+
+);
+
+
+// MAIN
+.text-block {
+
+	margin: {
+		top: 4rem;
+		right: auto;
+		bottom: 4rem;
+		left: auto;
+	}
+	padding: {
+		top: 0;
+		right: 2rem;
+		bottom: 0;
+		left: 2rem;
+	}
+	width: 50%;
+	border-left: 1px solid $secondary;
+
+	h1 {
+
+		margin-bottom: 1rem;
+		color: $secondary;
+		font: $headline;
+		font-size: 2em;
+		line-height: 1.25em;
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'portrait') {
+			padding-left: 1.25rem;
+			font-size: 1.5em;
+			border-left: 1px solid $secondary;
+		}
+
+	}
+
+	> p {
+		//color: $dark-gray;
+	}
+
+	.button {
+
+		margin: {
+			top: 4rem;
+			bottom: 0;
+		};
+		max-width: 75%;
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+			max-width: 100%;
+		}
+
+	}
+
+	@include break($type: 'width', $min: $laptop, $max: $desktop, $orientation: '') {
+		width: 75%;
+	}
+
+	@include break($type: 'width', $min: 0, $max: $laptop, $orientation: '') {
+		width: 100%;
+	}
+
+	@include break($type: 'width', $min: 0, $max: $tablet, $orientation: '') {
+		padding: {
+			//top: $gutter;
+			right: $gutter;
+			//bottom: $gutter;
+			left: $gutter;
+		}
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+		border-left: none;
+	}
+
+}

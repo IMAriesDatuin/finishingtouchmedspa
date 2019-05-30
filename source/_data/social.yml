@@ -1,0 +1,29 @@
+
+# CONTENT
+content:
+ -
+  icon: 'facebook'
+  title: 'Facebook'
+  description: 'Add us on Facebook.'
+  link: 'https://www.facebook.com'
+
+
+ -
+  icon: 'instagram'
+  title: 'Instagram'
+  description: 'Follow us on Instagram.'
+  link: 'https://www.instagram.com'
+
+
+ -
+  icon: 'twitter'
+  title: 'twitter'
+  description: 'Follow us on Twitter.'
+  link: 'https://www.twitter.com'
+
+
+ -
+  icon: 'yelp'
+  title: 'Yelp'
+  description: 'Read our client reviews on Yelp.'
+  link: 'https://www.yelp.com'

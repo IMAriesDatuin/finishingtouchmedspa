@@ -1,0 +1,58 @@
+/* -------------------------------------------------- */
+/* HEADLINE
+/* -------------------------------------------------- */
+
+// MAIN
+.headline {
+
+	margin: {
+		top: 4rem;
+		right: $gutter;
+		bottom: 4rem;
+		left: $gutter;
+	}
+	color: $secondary;
+	font: $headline;
+	font-size: 1.75em;
+	line-height: 1.25em;
+	text-align: center;
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+		margin-bottom: 2rem;
+	}
+
+}
+
+
+// MODIFIERS
+.text {
+
+	&-small {
+		font-size: 1em;
+	}
+
+	&-medium {
+
+		font-size: 3em;
+
+		@include break($type: 'width', $min: 0, $max: $mobile) {
+			font-size: 2em;
+		}
+
+	}
+
+	&-large {
+
+		font-size: 5em;
+
+		@include break($type: 'width', $min: $mobile, $max: $tablet, $orientation: '') {
+			font-size: 4em;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+			font-size: 2.25em;
+		}
+
+	}
+
+}

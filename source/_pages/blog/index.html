@@ -1,0 +1,72 @@
+---
+layout: default
+title: News &amp; Updates
+assets: assets/
+dialog: dialog/
+---
+
+
+<!-- {{ page }} -->
+
+
+<section class="articles">
+
+
+	<!-- HEADLINE -->
+	<h1 class="headline text-medium">News &amp; Updates</h1>
+	<!-- // HEADLINE -->
+
+
+
+	<!-- SECTION -->
+	{{#repeat 10}}
+	<article class="grid-x align-stretch align-center section-container">
+
+
+		<!-- IMAGE -->
+		<div class="cell medium-2 large-2 section-container-media">
+
+			<picture>
+				<source type="image/webp" data-srcset="{{ root }}{{ assets }}placeholder/shutterstock_380423032.webp">
+				<img data-src="{{ root }}{{ assets }}placeholder/shutterstock_380423032.jpg" class="section-media right-auto dzsparallaxer--target " alt="CoolSculpting">
+			</picture>
+
+		</div>
+		<!-- // IMAGE -->
+
+
+		<!-- COPY -->
+		<div class="cell medium-10 large-10 section-container-text-block">
+
+
+			<h1>Ways Fat Reduction in Sacramento Can Help You</h1>
+
+			<ul class="meta">
+				<li class="meta-category">Category: Health &amp; Fitness</li>
+				<li class="meta-date">Posted: 2 hours ago</li>
+			</ul>
+
+			<p>If you live in Sacramento, it is likely that you love to get outside and enjoy the fresh air during all seasons. Something that may stop you from living your life to the fullest is having unwanted fat on your body. You may not feel inclined to wear shorts, tank tops, or other active clothing.</p>
+
+
+			<!-- BUTTON -->
+			<a href="--base/blog/template" class="button button-medium right-auto button-outline">
+				<p>Continue reading</p>
+				<span class="fal fa-long-arrow-right"></span>
+			</a>
+			<!-- // BUTTON -->
+
+
+		</div>
+		<!-- // COPY -->
+
+
+	</article>
+	{{/repeat}}
+	<!-- // SECTION -->
+
+
+</section>
+
+
+<!-- {{ page }} -->

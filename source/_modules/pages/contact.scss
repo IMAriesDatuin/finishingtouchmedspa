@@ -1,0 +1,93 @@
+/* -------------------------------------------------- */
+/* TESTIMONIALS CAROUSEL
+/* -------------------------------------------------- */
+
+// MAIN
+.contact-card {
+
+	.title {
+		margin-bottom: 1rem;
+		color: $secondary; 
+		font: $headline;
+		font-size: 1.5em;
+	}
+
+	&-company-info-general {
+
+		li {
+
+			display: block;
+			position: relative;
+			margin: {
+				left: 2rem;
+				bottom: 1rem;
+			}
+			color: $dark-gray;
+			text-align: left;
+
+			&.company-info-title {
+				pointer-events: none;
+				font-size: 1.25em;
+			}
+
+			&.company-info-address {
+				margin-bottom: 2rem;
+			}
+
+			span {
+				position: absolute;
+				top: 2px;
+				left: -25px;
+				color: $gray;
+				font-size: 1em;
+			}
+
+			a {
+
+				display: block;
+				width: 100%;
+				padding-bottom: 3rem;
+				font: $subheadline;
+				font-size: 1em;
+
+				&:first-child {
+					padding-bottom: 0;
+				}
+
+				&:hover {
+					color: $primary;
+				}
+
+			}
+
+		}
+
+	}
+
+	&-company-info-social {
+
+		li {
+
+			display: inline;
+			margin-right: 1rem;
+
+			a {
+
+				color: $dark-gray;
+
+				&:hover {
+					color: $primary;
+				}
+
+			}
+
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+		}
+
+	}
+
+}

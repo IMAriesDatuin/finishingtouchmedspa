@@ -1,0 +1,64 @@
+
+# CONTENT
+content:
+ -
+  id: 'home'
+  title: 'Home'
+  description: 'Welcome.'
+  image-src: 'assets/placeholder/shutterstock_156914597.jpg'
+  webp: 'assets/placeholder/shutterstock_156914597.webp'
+  link: ''
+
+
+ -
+  id: 'about'
+  title: 'About'
+  description: 'Meet the team.'
+  image-src: 'assets/placeholder/shutterstock_207933373.jpg'
+  webp: 'assets/placeholder/shutterstock_207933373.webp'
+  link: 'about'
+
+
+ -
+  id: 'procedures'
+  title: 'Procedures'
+  description: 'What we can do for you.'
+  image-src: 'assets/placeholder/shutterstock_241334164.jpg'
+  webp: 'assets/placeholder/shutterstock_241334164.webp'
+  link: 'procedures'
+
+
+ -
+  id: 'reviews'
+  title: 'Reviews'
+  description: 'Real stories from real patients.'
+  image-src: 'assets/placeholder/shutterstock_267632876.jpg'
+  webp: 'assets/placeholder/shutterstock_267632876.webp'
+  link: 'reviews'
+
+
+ -
+  id: 'blog'
+  title: 'Blog'
+  description: 'News and updates.'
+  image-src: 'assets/placeholder/shutterstock_287788316.jpg'
+  webp: 'assets/placeholder/shutterstock_287788316.webp'
+  link: 'blog'
+
+
+ -
+  id: 'contact'
+  title: 'Contact'
+  description: 'How can we help you?'
+  image-src: 'assets/placeholder/shutterstock_583401700.jpg'
+  webp: 'assets/placeholder/shutterstock_583401700.webp'
+  link: 'contact'
+
+
+ -
+  id: 'specials'
+  title: 'Specials'
+  description: 'Take a look at our specials.'
+  image-src: 'assets/placeholder/shutterstock_191546813.jpg'
+  webp: 'assets/placeholder/shutterstock_191546813.webp'
+  link: 'specials'

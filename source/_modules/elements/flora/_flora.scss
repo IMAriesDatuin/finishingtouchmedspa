@@ -1,0 +1,147 @@
+/* -------------------------------------------------- */
+/* BLOCK CAP
+/* -------------------------------------------------- */
+
+// OPTIONS
+$flora-options: (
+	background-color: $charcoal
+);
+
+
+// MAIN
+.flora {
+
+	z-index: 1;
+	//pointer-events: none;
+	display: block;
+	position: absolute;
+	width: 25%;
+	height: auto;
+
+	&.branches-01 {
+
+		top: 50%;
+		left: 0;
+		width: 20%;
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: 'both') {
+			top: auto;
+			bottom: 8%;
+			width: 30%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			top: auto;
+			bottom: 10%;
+			width: 40%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'landscape') {
+			display: none;
+			top: auto;
+			bottom: -50%;
+			width: 30%;
+		}
+
+	}
+
+	&.branches-02 {
+
+		top: -50%;
+		right: 0;
+		width: 20%;
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: 'portrait') {
+			top: -25%;
+			width: 30%;
+		}
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: 'landscape') {
+			top: -25%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			top: -35%;
+			width: 35%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'landscape') {
+			top: 0;
+			width: 30%;
+		}
+
+	}
+
+	&.branches-03 {
+
+		top: -5%;
+		left: 0;
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: '') {
+			top: 10%;
+			width: 35%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			display: none;
+			top: 15%;
+			width: 35%;		
+		}
+
+	}
+
+	&.branches-04 {
+
+		top: -25%;
+		right: -8%;
+		width: 30%;
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: 'portrait') {
+			top: -10%;
+			right: -15%;
+			width: 50%;
+		}
+
+		@include break($type: 'width', $min: $tablet, $max: $laptop, $orientation: 'landscape') {
+			top: -10%;
+			right: -15%;
+			width: 50%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			top: 0;
+			right: -15%;
+			width: 50%;
+		}
+
+	}
+
+	&.branches-05 {
+
+		top: 0;
+		left: -5%;
+		width: 20%;
+
+		@include break($type: 'width', $min: 0, $max: $laptop, $orientation: 'both') {
+			width: 35%;
+		}
+
+	}
+
+	&.branches-06 {
+
+		top: 0;
+		right: -5%;
+		width: 20%;
+
+		@include break($type: 'width', $min: 0, $max: $laptop, $orientation: 'both') {
+			width: 35%;
+		}
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'portrait') {
+		display: none;
+	}
+
+}

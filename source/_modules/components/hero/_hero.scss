@@ -1,0 +1,226 @@
+/* -------------------------------------------------- */
+/* HERO
+/* -------------------------------------------------- */
+
+// OPTIONS
+$hero-options: (
+
+);
+
+
+// MAIN
+.hero {
+
+	$self: &;
+
+	/*
+	@include transition(
+		$property: (opacity),
+		$duration: 200ms,
+		$delay: 0,
+		$ease: ease-in-out,
+		$optimize: true
+	);
+	*/
+	overflow: visible;
+	position: relative;
+	width: 100%;
+	//height: 50%;
+	//min-height: 50vh;
+	background: $white;
+
+	&-content {
+
+		@include fade(
+			$type: 'right',
+			$color: #fff,
+			$alpha: 1,
+			$scale: 25%,
+			$start: 0%,
+			$stop: 90%,
+			$order: 1,
+			$prefix: '::before',
+			$suffix: '',
+			$is-fixed: false,
+			$clickable: false
+		);
+		margin-bottom: 4rem;
+		width: 100%;
+		height: 50%;
+		min-height: 50vh;
+
+		#{$self}-media {
+
+			overflow: hidden;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+				//width: 100%;
+				border-radius: 0;
+			}
+
+			img, video {
+
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+
+				@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+					//width: 100%;
+					border-radius: 0;
+				}
+
+			}
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: '') {
+
+			//height: 50%;
+			//min-height: 50vh;		
+
+			&::before {
+				display: none;
+			}
+
+		}
+
+	}
+
+	&-footer {
+
+		z-index: 2;
+		position: relative;
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		width: 75%;
+
+		.social {
+
+			z-index: 1;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			li {
+
+				display: inline-block;
+				margin-right: 2rem;
+
+				&.divider {
+
+					margin-bottom: 0.5rem;
+					width: 100px;
+					height: 1px;
+					background: #003b60;
+
+					@include break($type: 'width', $min: 0, $max: $tablet, $orientation: '') {
+						display: none;
+					}
+
+				}
+
+				a {
+
+					color: #003b60;
+					font-size: 1.25em;
+
+					p {
+
+						margin-left: 2rem;
+						font: $copy;
+						font-size: 0.75em;
+
+						@include break($type: 'width', $min: 0, $max: $tablet, $orientation: '') {
+							display: none;
+						}
+						
+					}
+
+					&:hover {
+						color: $primary;
+					}
+
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+			}
+
+			@include break($type: 'width', $min: 0, $max: $tablet, $orientation: '') {
+				position: relative;
+				margin-bottom: 2rem;
+			}
+
+
+		}
+
+		.scroll-to {
+
+			width: 10%;
+
+			@include break($type: 'width', $min: 0, $max: $tablet, $orientation: '') {
+				margin: {
+					top: 2rem;
+					bottom: 2rem;
+				}
+				width: 100%;
+			}
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $laptop, $orientation: '') {
+			width: 100%;
+		}
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+		padding-top: 0 !important;
+	}
+
+}
+
+
+// MODIFIERS
+.hero {
+
+	$self: &;
+
+	#{$self}-element {
+		
+	}
+
+	&.is-ready {
+
+	}
+
+	&.is-top {
+
+	}
+
+	&.is-not-top {
+
+	}
+
+	&.is-bottom {
+
+	}
+
+	&.is-not-bottom {
+
+	}
+
+	&.is-scrolling-up {
+
+	}
+
+	&.is-scrolling-down {
+
+	}
+
+}

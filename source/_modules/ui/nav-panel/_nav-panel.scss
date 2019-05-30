@@ -1,0 +1,483 @@
+/* -------------------------------------------------- */
+/* NAV PANEL
+/* -------------------------------------------------- */
+
+// OPTIONS
+$nav-panel-options: (
+	font: $headline, // Defined the font for the text links.
+	text-color: $secondary, // Set the default color for all elements.
+	text-hover-color: $primary, // Set the hover color for all elements.
+	scrollbar: true, // Hide the nav panel's scrollbar. The nav panel will still be scrollable.
+	smooth-scroll: true, // Enable or disable the smooth scroll for touch devices.
+	bounce: false, // Preserve the bounce or glow effect when overscrolling on mobile devices (more notable in Android devices).
+	logo-color: none, // Set the color of the background logo.
+	background-color: $white, // Set the nav panel's background color.
+	duration: 400ms, // Set the duration of the animation.
+	delay: 0, // Delay the animation by this amount. 
+	ease: $easeWipe // Set the easing type for this animation.
+);
+
+
+// MAIN
+.nav-panel {
+
+	$self: &;
+
+	pointer-events: none;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	-webkit-overflow-scrolling: touch;
+
+	nav {
+
+		z-index: 2;
+		position: relative;
+		padding: 2rem;
+		width: 50%;
+		//text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
+		#{$self}-menu {
+
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+
+				a {
+
+					cursor: pointer;
+					position: relative;
+					color: map-get($nav-panel-options, text-color);
+					font: map-get($nav-panel-options, font);
+					font-size: 2.75em;
+					line-height: 1.5em;
+					text-transform: uppercase;
+
+					&::before {
+						@include transition(
+							$property: (background, transform),
+							$duration: map-get($nav-panel-options, duration),
+							$delay: map-get($cursor-options, delay),
+							$ease: map-get($cursor-options, ease),
+							$optimize: true
+						);
+						content: '';
+						position: absolute;
+						top: 5px;
+						left: -5px;
+						width: 25%;
+						height: 50%;
+						//background: map-get($nav-panel-options, text-hover-color);
+						background: lighten(map-get($nav-panel-options, text-hover-color), 25%);
+						transform: scale3d(0,1,1);
+						transform-origin: left center;
+
+						@media screen and (min-width: 0) and (max-width: 667px) and (orientation: portrait) {
+							display: none;
+						}
+
+						@media screen and (min-width: 0) and (max-width: 667px) and (orientation: landscape) {
+							display: none;
+						}
+
+					}
+
+					&:hover,
+					&:focus {
+
+						&::before {
+							//background: lighten(map-get($nav-panel-options, text-hover-color), 10%);
+							transform: scale3d(1,1,1);
+						};
+
+						color: map-get($nav-panel-options, text-color);
+
+					}
+
+					div.on-hover  {
+						color: darken(map-get($nav-panel-options, text-hover-color), 10%);
+					}
+
+					@media screen and (min-width: 0) and (max-width: 667px) and (orientation: portrait) {
+						font-size: 1.5em;
+					}
+
+					@media screen and (min-width: 0) and (max-width: 667px) and (orientation: landscape) {
+						font-size: 2em;
+					}
+
+				}
+
+				&.is-active {
+					cursor: not-allowed;
+					pointer-events: none;
+				}
+
+			}
+
+		}
+
+		#{$self}-social {
+
+			margin: {
+				top: 8rem;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			};
+			padding-bottom: 5rem;
+			list-style: none;
+
+			li {
+
+				display: inline-block;
+				margin: {
+					left: 2rem;
+					right: 2rem;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a {
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					width: 35px;
+					height: 35px;
+					color: map-get($nav-panel-options, text-color);
+					font: map-get($nav-panel-options, font);
+					font-size: 1.25em;
+
+					&:hover {
+						color: darken(map-get($nav-panel-options, text-hover-color), 10%);
+					}
+
+					span {
+
+					}
+
+				}
+
+			}
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			width: 100%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'landscape') {
+			padding: {
+				top: 2rem;
+				bottom: 2rem;
+			}
+			height: 100%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'landscape') {
+			width: 75%;
+		}
+
+	}
+
+	&-slider {
+
+		@include fade(
+			$type: 'tb',
+			$color: map-get($nav-panel-options, background-color),
+			$alpha: 1,
+			$scale: 100%,
+			$start: 10%,
+			$stop: 90%,
+			$order: 2,
+			$prefix: '',
+			$suffix: '::before',
+			$is-fixed: false,
+			$clickable: false
+		);
+		z-index: 1;
+		opacity: 0;
+		overflow: hidden;
+		//display: flex;
+		//align-items: center;
+		//justify-content: center;
+		position: fixed;
+		right: 10%;
+		//bottom: 0;
+		width: 50%;
+		height: 75%;
+
+		li {
+
+			z-index: 1;
+			overflow: hidden;
+			display: flex;
+			position: absolute;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			//background: linear-gradient(to right, rgba(176,213,212,1) 0%, rgba(176,213,212,0) 15%, rgba(176,213,212,0) 85%, rgba(176,213,212,1) 100%);
+
+			&::before {
+				@include transition(
+					$property: (transform),
+					$duration: map-get($nav-panel-options, duration),
+					$delay: map-get($cursor-options, delay),
+					$ease: map-get($cursor-options, ease),
+					$optimize: true
+				);
+				content: '';
+				z-index: 1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: map-get($nav-panel-options, background-color);
+				transform: scale3d(1,1,1);
+				transform-origin: right center;
+			}
+
+			.lazy {
+
+				width: 100%;
+				height: 100%;
+				background-position: 75% center;
+				background-repeat: no-repeat;
+				background-size: contain;
+
+				@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'portrait') {
+					background-position: 150px center;
+				}
+
+				@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'landscape') {
+					background-position: 90% center;
+				}
+
+			}
+
+			&.is-active-slide {
+
+				//z-index: 2;
+
+				//img {
+					//opacity: 1;
+					//transform: translate3d(0,0,0);
+				//}
+
+			}
+
+			&.is-active {
+
+				&::before {
+					transform: scale3d(0,1,1);
+					transform-origin: right center;
+				};
+
+			}
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $laptop, $orientation: 'portrait') {
+			@include fade(
+				$type: 'tb',
+				$color: map-get($nav-panel-options, background-color),
+				$alpha: 1,
+				$scale: 100%,
+				$start: 25%,
+				$stop: 75%,
+				$order: 2,
+				$prefix: '',
+				$suffix: '::before',
+				$is-fixed: false,
+				$clickable: false
+			);
+		}
+		
+		@include break($type: 'width', $min: 0, $max: $tablet, $orientation: 'portrait') {
+			right: 0;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
+	&-background {
+
+		z-index: -1;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: -1%;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+
+		.col {
+
+			overflow: hidden;
+			flex: 1;
+			position: relative;
+			//width: 33.33%;
+			height: 100%;
+			//border-right: 1px solid rgba(map-get($nav-panel-options, text-color), 0.4);
+			background: map-get($nav-panel-options, background-color);
+			//transform-origin: bottom center;
+
+			@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'portrait') {
+				&:not(:nth-of-type(1)) {
+					display: none;
+					//border-right: 1px solid rgba(#fff, 0);
+				}				
+			}
+
+		}
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'landscape') {
+		align-items: flex-start;
+		padding: {
+			top: 10rem;
+			//bottom: 100px;
+		}
+	}
+
+
+}
+
+
+// MODIFIERS
+.nav-panel {
+
+	$self: &;
+
+	&.is-opening {
+
+		pointer-events: none;
+		opacity: 1;
+		visibility: visible;
+		//display: flex;
+
+		#{$self}-background {
+
+			.col {
+				transform-origin: top center;
+			}
+
+		}
+
+	}
+
+	&.is-open {
+
+		pointer-events: auto;
+		overflow: auto;
+		//opacity: 1;
+		//visibility: visible;
+
+		#{$self}-background {
+
+			.col {
+				transform-origin: bottom center;
+			}
+			
+		}
+
+	}
+
+	&.is-closing {
+
+	}
+
+	&.is-closed {
+
+	}
+
+}
+
+
+// HTML
+html {
+
+	&.is-locked {
+		//visibility: visible;
+		overflow: {
+			x: hidden;
+			y: hidden;
+		}
+	}
+
+}
+
+
+// LOGIC
+@if map-get($nav-panel-options, scrollbar) == false {
+
+	.nav-panel {
+
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+	}
+
+}
+
+@if map-get($nav-panel-options, smooth-scroll) == false {
+
+	.nav-panel {
+		-webkit-overflow-scrolling: auto;
+	}
+
+}
+
+@if map-get($nav-panel-options, bounce) == false {
+
+	.nav-panel {
+		overscroll-behavior: none;
+	}
+
+}
+
+@if map-get($nav-panel-options, bounce) == 'contain' {
+
+	.nav-panel {
+		overscroll-behavior: contain;
+	}
+
+}

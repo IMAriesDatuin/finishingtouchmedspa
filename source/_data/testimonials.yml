@@ -1,0 +1,93 @@
+
+# CONTENT
+content:
+ -
+  id: ''
+  rating: '5'
+  name: 'Janice Marie Verner Ray'
+  date: 'a month ago'
+  summary: 'Nice atmosphere and great staff who are very nice and professional.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '5'
+  name: 'Joyce Sklark'
+  date: '2 months ago'
+  summary: 'Staff are very professional and informative about the services and products! Very friendly environment and did not pressure in any way.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '5'
+  name: 'Jeri Browning'
+  date: '2 months ago'
+  summary: 'Procedure went great!!<br><br>
+  Everything was explained thoroughly and praying for great results.<br><br>
+  Thank you all for your professionalism!!!'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '5'
+  name: 'Meghan Dahl'
+  date: '2 months ago'
+  summary: 'I have received services from The Finishing Touch MedSpa including botox, a hydrofacial & consultation with a Visia complexion analysis.  The staff is friendly & knowledgeable about the products & services offered. I was impressed by the timeliness of being able to schedule my appointment.  Even with a busy office, it felt like my appointment was their top priority of the day.  Dr. Hernried and Janet, the NP are extremely receptive to your needs, especially when it came to discussing my "after" results from botox.  I would recommend contacting The Finishing Touch for any of your medspa needs.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '5'
+  name: 'Lisa Tami'
+  date: '5 months ago'
+  summary: 'The staff of Finishing Touch Med Spa are very caring and professional. I had the Halo laser treatment and BBL. The results are amazing. My sun damage is gone. Returning for a Visia follow-up analysis, I lost 5 years of aging...in 3 weeks! With the gentle encouragement of Cami, I now follow an easy daily routine of Elta MD skincare, never forgetting my sunblock.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '1'
+  name: 'Jane Doe'
+  date: '5 mins ago'
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '2'
+  name: 'Jane Doe'
+  date: '10 mins ago'
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '3'
+  name: 'Jane Doe'
+  date: 'a day ago'
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '4'
+  name: 'Jane Doe'
+  date: '2 days ago'
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  link: '#'
+
+
+ -
+  id: ''
+  rating: '5'
+  name: 'Jane Doe'
+  date: '1 year ago'
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  link: '#'

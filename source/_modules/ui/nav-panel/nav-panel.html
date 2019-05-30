@@ -1,0 +1,75 @@
+
+<!-- CONTENT: NAV PANEL MORPHEUS -->
+<div id="nav-panel" class="nav-panel is-unlocked">
+
+
+	<!-- NAV -->
+	<nav>
+
+
+		<!-- MENU -->
+		<ul class="nav-panel-menu">
+
+			{{#each menu.content}}
+			<li>
+
+				<a href="--base/{{ link }}" class="{{ id }}">
+					{{ title }}
+					<span class="inner" aria-hidden="true"></span>
+				</a>
+
+			</li>
+			{{/each}}
+
+		</ul>
+		<!-- // MENU -->
+
+
+		<!-- SOCIAL -->
+		<ul class="nav-panel-social">
+
+			{{#each social.content}}
+			<li>
+
+				<a href="{{ link }}" target="_blank" class="social-{{ icon }}-hover" aria-label="{{ description }}" data-no-swup>
+
+					<span class="fab fa-{{ icon }}" aria-hidden="true"></span>
+
+				</a>
+
+			</li>
+			{{/each}}
+
+		</ul>
+		<!-- // SOCIAL -->
+
+
+	</nav>
+	<!-- // NAV -->
+
+
+	<!-- SLIDER -->
+	<ul class="nav-panel-slider">
+
+		{{#each menu.content}}
+		<li><div class="lazy" data-bg="url( {{ image-src}} )"></div></li>
+		{{/each}}
+
+	</ul>
+	<!-- // SLIDER -->
+
+
+	<!-- BACKGROUND -->
+	<div class="nav-panel-background">
+		
+
+		{{#repeat 10}}
+		<div class="col"></div>
+		{{/repeat}}
+
+	</div>
+	<!-- // BACKGROUND -->
+
+
+</div>
+<!-- // CONTENT: NAV PANEL MORPHEUS -->

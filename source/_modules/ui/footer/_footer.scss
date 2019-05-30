@@ -1,0 +1,332 @@
+/* -------------------------------------------------- */
+/* FOOTER
+/* -------------------------------------------------- */
+
+// OPTIONS
+$footer-options: (
+	text-color: $white, // Set the default color for all elements.
+	text-hover-color: $primary, // Set the hover color for all elements.
+	background-color: $white, // Set the nav panel's background color.
+	duration: 1000ms,
+	delay: 200ms,
+	ease: $easeWipe
+);
+
+
+// MAIN
+.footer {
+
+	$self: &;
+
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	//height: 50vh;
+	background: map-get($footer-options, background-color);
+
+	.logo {
+
+		margin: {
+			top: 8rem;
+			right: auto;
+			bottom: 6rem;
+			left: auto;
+		}
+		width: 100%;
+		max-width: 100px;
+
+		&-desktop {
+			display: none;
+		}
+
+		&-mobile {
+			display: block;
+		}
+
+	}
+
+	.footer-container {
+
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		padding: $gutter;
+		width: 75%;
+
+		.cell {
+			margin-bottom: 6rem;
+			padding: {
+				left: 1rem;
+				right: 1rem;
+			}
+		}
+
+		#{$self}-company-info {
+
+			.title {
+				margin-bottom: 1rem;
+				color: $secondary; 
+				font: $headline;
+				font-size: 1.5em;
+			}
+
+			&-general {
+
+				li {
+
+					display: block;
+					position: relative;
+					margin: {
+						left: 2rem;
+						bottom: 1rem;
+					}
+					color: $dark-gray;
+					text-align: left;
+
+					&.company-info-title {
+						pointer-events: none;
+						font-size: 1.25em;
+					}
+
+					&.company-info-address {
+						margin-bottom: 2rem;
+					}
+
+					span {
+						position: absolute;
+						top: 2px;
+						left: -25px;
+						color: $gray;
+						font-size: 1em;
+					}
+
+					a {
+
+						display: block;
+						width: 100%;
+						padding-bottom: 3rem;
+						color: inherit;
+						font: $subheadline;
+						font-size: 1em;
+
+						&:first-child {
+							padding-bottom: 0;
+						}
+
+						&:hover {
+							color: $primary;
+						}
+
+					}
+
+				}
+
+			}
+
+			&-social {
+
+				li {
+
+					display: inline;
+					margin-right: 1rem;
+
+					a {
+
+						color: $dark-gray;
+
+						&:hover {
+							color: $primary;
+						}
+
+					}
+
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+				}
+
+			}
+
+		}
+
+		#{$self}-menu {
+
+			.title {
+				margin-bottom: 1rem;
+				color:$secondary; 
+				font: $headline;
+				font-size: 1.5em;
+			}
+
+			ul {
+
+				li {
+
+					display: block;
+					margin: {
+						left: 2rem;
+						bottom: 1rem;
+					}
+					text-align: left;
+					
+					a {
+
+						display: block;
+						width: 100%;
+						padding-bottom: 3rem;
+						color: $dark-gray;
+						font: $subheadline;
+						font-size: 1em;
+
+						&:hover {
+							color: $primary;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		#{$self}-form {
+
+			.title {
+				margin-bottom: 1rem;
+				color: $secondary; 
+				font: $headline;
+				font-size: 1.5em;
+			}
+
+			from {
+
+			}
+
+			/*
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: black;
+			font-size: 1.5rem;
+			border-radius: 8px;
+			background: white;
+			*/
+
+		}
+
+		@include break($type: 'width', $min: 0, $max: $laptop, $orientation: '') {
+			width: 100%
+		}
+
+	}
+
+	.legal-stuff {
+
+		display: block;
+		margin: {
+			top: 2rem;
+			right: auto;
+			bottom: 2rem;
+			left: auto;
+		}
+		width: 100%;
+		text-align: center;
+
+		li {
+
+			display: inline-block;
+			color: $dark-gray;
+			font-size: 0.75em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+
+				color: inherit;
+
+				&:hover {
+					color: $secondary;
+				}
+
+				&.made-by {
+
+					&:hover {
+						color: magenta;
+					}
+
+				}
+
+			}
+
+			&:not(:last-child)::after {
+				content: '/';
+				margin: { 
+					left: 0.5rem;
+					right: 0.5rem;
+				}
+				color: $gray;
+				font-size: 1em;
+			}
+
+		}
+
+	}
+
+	.background {
+		z-index: -1;
+		opacity: 0.05;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		//background: url(../assets/backgrounds/pattern-floral.png);
+		background-position: top left;
+		background-repeat: repeat;
+		background-size: auto;
+	}
+
+}
+
+
+// MODIFIERS
+.footer {
+
+	&::before {
+		@include transition(
+			$property: (opacity, transform),
+			$duration: map-get($footer-options, duration),
+			$delay: map-get($footer-options, delay),
+			$ease: map-get($footer-options, ease),
+			$optimize: true
+		);
+		content: '';
+		z-index: 1;
+		pointer-events: none;
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $white;
+		transform: scale3d(1,1,1);
+		transform-origin: right center;
+	};
+
+	&.in-view {
+
+		&::before {
+			opacity: 0;
+			//transform: scale3d(0,1,1);
+		};
+
+	}
+
+}

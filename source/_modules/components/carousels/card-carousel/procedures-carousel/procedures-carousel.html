@@ -1,0 +1,73 @@
+
+<!-- CONTENT: PROCEDURES CAROUSEL -->
+<section class="procedures-carousel card-carousel carousel no-gutter reveal-container">
+
+
+	{{> branch-04}}
+
+
+	<!-- HEADLINE -->
+	<header class="reveal">
+		<h1 class="headline text-medium">Treatments &amp; Procedures</h1>
+		<p class="hide"></p>
+	</header>
+	<!-- // HEADLINE -->
+
+
+	{{#each procedures.content}}
+	<article id="{{ id }}" class="carousel-cell">
+
+
+		<!-- IMAGE -->
+		<div class="carousel-cell-image" data-flickity-bg-lazyload="{{ root }}{{ image-src }}" alt="{{ description }}"></div>
+		<!-- // IMAGE -->
+
+
+		<!--
+		<ul class="width-100 test">
+
+			{{#repeat 10}}
+			<li style="z-index: 10; display: inline-block; width: 50px; height: 50px; margin-right: 1rem; background: red;"></li>
+			{{/repeat}}
+
+			
+		</ul>
+
+
+		<picture class="cursor-draggable-content">
+
+			<source type="image/webp" data-srcset="{{ root }}{{ webp }}">
+			<img data-flickity-lazyload="{{ root }}{{ image-src }}" alt="{{ description }}">
+
+		</picture>
+		-->
+
+
+		<!-- BLOCK -->
+		<div class="carousel-cell-text-block">
+
+
+			<!-- COPY -->
+			<h2>{{ title }}</h2>
+			<p>{{ description }}</p>
+			<!-- // COPY -->
+
+
+			<!-- BUTTON -->
+			<a href="--base/{{ link }}" class="button button-outline">
+				<p>More procedures</p>
+				<span class="fal fa-long-arrow-right"></span>
+			</a>
+			<!-- // BUTTON -->
+
+
+		</div>
+		<!-- // BLOCK -->
+
+
+	</article>
+	{{/each}}
+
+
+</section>
+<!-- // CONTENT: PROCEDURES CAROUSEL -->

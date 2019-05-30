@@ -1,0 +1,201 @@
+/* -------------------------------------------------- */
+/* BUTTON (DEFAULT)
+/* -------------------------------------------------- */
+
+// OPTIONS
+$button-options: (
+	sizes: (
+		small: 25%,
+		medium: 50%,
+		large: 75%
+	),
+	font: $subheadline,
+	text-color: $white,
+	text-hover-color: $white,
+	background-color: $primary,
+	background-hover-color: $secondary,
+	radius: 50px,
+	truncate: false,
+	duration: 400ms
+) !default;
+
+
+// MAIN
+.button {
+
+	$self: &;
+
+	@include transition(
+		$property: (color, border, background),
+		$duration: map-get($button-options, duration),
+		$delay: 0,
+		$ease: $easeNatural,
+		$optimize: true
+	);
+	outline: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: {
+		top: 2rem;
+		//right: auto;
+		bottom: 2rem;
+		//left: auto;
+	};
+	padding: 0.75em 2em;
+	width: auto;
+	height: auto;
+	min-height: 50px;
+	color: map-get($button-options, text-color);
+	font: map-get($button-options, font);
+	font-size: 1em;
+	text-decoration: none;
+	//text-transform: uppercase;
+	border-radius: map-get($button-options, radius);
+	background: map-get($button-options, background-color);
+	//background: linear-gradient(to right, map-get($button-options, background-color) 25%, darken( map-get($button-options, background-color), $darken) 100%);
+
+	&-outline {
+
+		color: map-get($button-options, background-color);
+		border: 2px solid map-get($button-options, background-color);
+		background: linear-gradient(to right, rgba(map-get($button-options, background-hover-color), 0) 25%, rgba(map-get($button-options, background-hover-color), 0) 100%);
+
+		&.is-touch,
+		&.is-active {
+			color: map-get($button-options, text-hover-color);
+			border-color: rgba(map-get($button-options, background-hover-color), 0);
+			background: linear-gradient(to right, map-get($button-options, background-hover-color) 25%, darken(map-get($button-options, background-hover-color), $darken) 100%);
+		}
+
+	}
+
+	p {
+		flex-basis: auto;
+		font: inherit;
+		//font-size: 1em;
+	}
+
+	&:not(.button-theme) {
+
+		[class*='fa-'] {
+			flex-basis: auto;
+			margin: {
+				left: 1rem;
+				right: 1rem;
+			}
+			font-size: 1.25em;
+		}
+
+	}
+
+	&:hover,
+	&.is-touch,
+	&.is-active {
+		color: map-get($button-options, text-hover-color);
+		border: 2px solid rgba(map-get($button-options, background-hover-color), 0);
+		background: map-get($button-options, background-hover-color);
+		//background: linear-gradient(to right, map-get($button-options, background-hover-color) 25%, darken( map-get($button-options, background-hover-color), $darken) 100%);
+	}
+
+	&:active,
+	&:focus {
+		color: map-get($button-options, text-hover-color);
+		background: map-get($button-options, background-hover-color);
+	}
+
+}
+
+
+// MODIFIERS
+.button {
+
+	// COLORS
+	@each $name, $color in $colors {
+
+		// DEFAULT
+		&-#{$name} {
+			background: $color;
+		}
+
+
+		// HOVER
+		&-#{$name}-hover:hover {
+			background: $color;
+		}
+
+	}
+
+
+	// SIZES
+	&-small {
+
+		max-width: map-get(map-get($button-options, sizes), small);
+
+		@include break($type: 'width', $min: $mobile, $max: $laptop, $orientation: '') {
+			max-width: 50%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+			max-width: 100%;
+		}
+
+	}
+
+	&-medium {
+		max-width: map-get(map-get($button-options, sizes), medium);
+	}
+
+	&-large {
+		max-width: map-get(map-get($button-options, sizes), large);
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+
+		&-expand {
+			margin: {
+				left: auto;
+				right: auto;
+			}
+			max-width: 100%;
+		}
+
+	}
+
+
+	// STATE
+	&.disabled {
+		cursor: pointer;
+		pointer-events: none;
+		background: $gray;
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		max-width: 100%;
+	}
+	
+}
+
+
+// LOGIC
+@if map-get($button-options, truncate) == true {
+
+	.button {
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		p {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+	}
+
+}

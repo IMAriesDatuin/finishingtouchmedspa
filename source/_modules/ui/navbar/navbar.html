@@ -1,0 +1,62 @@
+
+<!-- CONTENT: NAVBAR -->
+<header class="navbar headroom">
+
+
+	<!-- GRID -->
+	<div class="menubar">
+
+
+		<!-- CELL -->
+		<a href="--base/" class="menubar-logo no-cursor no-link" aria-label="--name" >
+
+			{{> logo-icon}}
+
+		</a>
+		<!-- // CELL -->
+
+
+		<!-- CELL -->
+		<nav class="menubar-menu no-cursor">
+
+			<!-- MENU -->
+			<ul>
+
+				{{#each menu.content}}
+				<li>
+
+					<a href="--base/{{ link }}" class="{{ id }} no-cursor">{{ title }}</a>
+
+				</li>
+				{{/each}}
+
+			</ul>
+			<!-- // MENU -->
+
+		</nav>
+		<!-- // CELL -->
+
+
+		<!-- CELL -->
+		<a href="#" class="menubar-cta button no-cursor">
+			<p>Book an appointment</p>
+			<span class="far fa-calendar-alt"></span>
+		</a>
+		<!-- // CELL -->
+
+
+		<!-- CELL -->
+		<div class="menubar-toggle menu-toggle no-cursor headroom magnetic">
+
+			{{> menu-toggle}}
+
+		</div>
+		<!-- // CELL -->
+
+
+	</div>
+	<!-- GRID -->
+
+
+</header>
+<!-- // CONTENT: NAVBAR -->

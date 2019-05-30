@@ -1,0 +1,72 @@
+/* -------------------------------------------------- */
+/* IN VIEW
+/* -------------------------------------------------- */
+
+// OPTIONS
+$in-view-options: (
+	background-color: $charcoal,
+	duration: 400ms,
+	delay: 0,
+	ease: $easeNatural
+);
+
+
+// MAIN
+.reveal-container {
+
+	@include transition(
+		$property: (opacity),
+		$duration: map-get($in-view-options, duration),
+		$delay: map-get($in-view-options, delay),
+		$ease: map-get($in-view-options, ease),
+		$optimize: true
+	);
+	opacity: 0;
+
+	&.in-view {
+		opacity: 1;
+	}
+
+
+	.reveal {
+
+
+		//visibility: hidden;
+
+		/*
+		&::before {
+			@include transition(
+				$property: (transform),
+				$duration: map-get($in-view-options, duration),
+				$delay: map-get($in-view-options, delay),
+				$ease: $easeWipe,
+				$optimize: true
+			);
+			content: '';
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: map-get($in-view-options, background-color);
+			backface-visibility: hidden;
+			transform: scale3d(1,1,1) translateZ(0);
+			transform-origin: right center;
+			perspective: 1000;
+		};
+		*/
+
+		/*
+		&.in-view {
+
+			&::before {
+				transform: scale3d(0,1,1) translateZ(0);
+			};
+
+		}
+		*/
+
+	}
+
+}

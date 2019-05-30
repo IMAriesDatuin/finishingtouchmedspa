@@ -1,0 +1,94 @@
+
+<!-- CONTENT: TESTIMONIALS CAROUSEL -->
+<section class="testimonials-carousel card-carousel carousel no-gutter reveal-container">
+
+
+	<!-- IMAGE -->
+	<div class="overflow-hidden position-relative parallax-standalone fade-bottom send-to-back">
+
+		<picture>
+			<source type="image/webp" data-srcset="{{ root }}{{ assets }}placeholder/shutterstock_415387804.webp">
+			<img data-src="{{ root }}{{ assets }}placeholder/shutterstock_415387804.jpg" class="center-auto width-75 width-100-mobile-to-laptop lazy" alt="Real Stories From Real People">
+		</picture>
+
+	</div>
+	<!-- // IMAGE -->
+
+
+	<!-- HEADLINE -->
+	<header class="reveal">
+		<h1 class="headline text-medium">Real Stories From Real People</h1>
+		<p class="hide"></p>
+	</header>
+	<!-- // HEADLINE -->
+
+
+	{{#each testimonials.content}}
+	<article class="carousel-cell">
+
+
+		<!-- BLOCKQUOTE -->
+		<div class="carousel-cell-blockquote">
+
+
+			<!-- ELEMENT -->
+			<div class="carousel-cell-blockquote-icon">
+				<span class="fas fa-quote-left"></span>
+			</div>
+			<!-- // ELEMENT -->
+
+
+			<!-- COPY -->
+			<header class="meta">
+
+				<h2 class="meta-name">{{ name }}</h2>
+				<h3 class="meta-date">{{ date }}</h3>
+
+				<ul class="meta-rating rating" data-rating="{{ rating }}">
+					{{#repeat 5}}
+					<li><span class="fas fa-star"></span></li>
+					{{/repeat}}
+				</ul>
+
+			</header>
+
+			<p>{{ summary }}</p>
+			<!-- // COPY -->
+
+
+			<!-- FOOTER -->
+			<footer>
+
+				<span></span>
+
+				<a href="--base/{{ link }}" class="button no-waves">
+					<p>Read more</p>
+					<span class="fal fa-long-arrow-right"></span>
+				</a>
+
+			</footer>
+			<!-- // FOOTER -->
+
+
+		</div>
+		<!-- // BLOCKQUOTE -->
+
+
+	</article>
+	{{/each}}
+
+
+
+
+		<!-- BUTTON -->
+		<a href="--base/reviews" class="button button-small button-outline center-auto">
+			<p>What our clients are saying</p>
+			<span class="fal fa-long-arrow-right"></span>
+		</a>
+		<!-- // BUTTON -->
+
+
+
+
+</section>
+<!-- // CONTENT: TESTIMONIALS CAROUSEL -->

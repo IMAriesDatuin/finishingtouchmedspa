@@ -1,0 +1,223 @@
+/* -------------------------------------------------- */
+/* SECTION
+/* -------------------------------------------------- */
+
+// OPTIONS
+$section-options: (
+	background-color: $white,
+	duration: 800ms, // Set the duration of the animation.
+	delay: 0, // Delay the animation by this amount. 
+	ease: $easeNatural // Set the easing type for this animation.
+);
+
+
+// MAIN
+.section-container {
+
+	$self: &;
+
+	@include transition(
+		$property: (opacity),
+		$duration: map-get($section-options, duration),
+		$delay: map-get($section-options, delay),
+		$ease: map-get($section-options, ease),
+		$optimize: true
+	);
+	opacity: 0;
+
+	&-text-block {
+
+		z-index: 1;
+		position: relative;
+		padding: {
+			top: 0;
+			right: 4rem;
+			bottom: 0;
+			left: 4rem;
+		}
+
+		&::before {
+			@include transition(
+				$property: (transform),
+				$duration: map-get($section-options, duration),
+				$delay: map-get($section-options, delay),
+				$ease: $easeWipe,
+				$optimize: true
+			);
+			content: '';
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: map-get($section-options, background-color);
+			transform: scale3d(1,1,1);
+			transform-origin: right center;
+		}
+
+		h1, h2 {
+			//@extend .fix-font-render;
+			font: $headline;
+			color: $secondary;
+			font-size: 2em;
+			line-height: 1.25em;
+		}
+
+		h2 {
+			color: $primary;
+			font-size: 1.25em;
+		}
+
+		> p {
+			//@extend .fix-font-render;
+			//color: $dark-gray;
+			//font-size: 0.8em;
+			line-height: 2em;
+		}
+
+		ul {
+
+			//@extend .fix-font-render;
+			//padding: $gutter;
+
+			li {
+				margin-bottom: 2rem;
+				padding-left: 2rem;
+				color: $dark-gray;
+				//font-size: 0.8em;
+				line-height: 2em;
+				border-left: 1px solid $secondary;
+			}
+
+		}
+
+		@include break($type: 'width', $min: $mobile, $max: $laptop, $orientation: '') {
+			max-width: 75%;
+		}
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+			padding: {
+				top: 0;
+				right: $gutter;
+				bottom: 0;
+				left: $gutter;
+			}
+			max-width: 100%;
+		}
+
+	}
+
+	&.in-view {
+
+		opacity: 1;
+
+		#{$self}-text-block {
+
+			&::before {
+				transform: scale3d(0,1,1);
+			}
+
+		}
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+
+		&:first-of-type {
+			padding-top: 10rem;
+		}
+
+	}
+
+}
+
+
+// IMAGE
+.section-container-media {
+
+	$self: &;
+
+	overflow: hidden;
+	position: relative;
+
+	.section-media {
+
+		@include transition(
+			$property: (transform, filter),
+			$duration: map-get($section-options, duration),
+			$delay: 400ms,
+			$ease: map-get($section-options, ease),
+			$optimize: true
+		);
+		//opacity: 0;
+		margin: {
+			//top: 4rem;
+			bottom: 6rem;
+		};
+		transform: scale3d(1.25,1.25,1);
+		transform-origin: center center;
+		filter: blur(10px);
+
+		@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+			//height: 300px;
+		}
+
+	}
+
+	&::before {
+		@include transition(
+			$property: (transform),
+			$duration: map-get($section-options, duration),
+			$delay: 200ms,
+			$ease: $easeWipe,
+			$optimize: true
+		);
+		content: '';
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: map-get($section-options, background-color);
+		transform: scale3d(1,1,1);
+		transform-origin: right center;
+	}
+
+	&.is-loaded {
+
+		.section-media {
+			//opacity: 1;
+			transform: scale3d(1,1,1);
+			filter: blur(0);
+		}
+
+		&::before {
+			transform: scale3d(0,1,1);
+		}
+
+	}
+
+	&.on-error {
+
+		.section-media {
+			opacity: 1;
+			transform: scale3d(1,1,1);
+			filter: blur(0);
+		}
+
+		&::before {
+			transform: scale3d(1,1,1);
+		}
+
+		background-image: url(../assets/error-static.gif);
+		background-repeat: repeat;
+
+	}
+
+	@include break($type: 'width', $min: 0, $max: $mobile, $orientation: 'both') {
+		max-width: 100%;
+	}
+
+}
